@@ -45,7 +45,7 @@ The data collection phase will primarily involve:
 2. Alternative Method:
 - Third-party APIs (e.g., Instagram Graph API via Meta, RapidAPI).
 
-3.Tools & Libraries:
+3. Tools & Libraries:
 - `selenium`, `BeautifulSoup`, `pandas`, `requests`
 
 ## Analytical Methods
