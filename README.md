@@ -55,15 +55,11 @@ The project will consist of the following analytical components:
 - Data distribution analysis, identifying missing and outlier values
 - Visualizations (histograms, box plots, scatter plots)
 
-2. Hashtag Analysis
-- Frequency analysis and effectiveness measurement
-- Trend analysis of top hashtags over time
-
-3. User Engagement Analysis
+2. User Engagement Analysis
 - Comparison of engagement by content type
 - Time series analysis to determine peak engagement times (day/hour analysis)
 
-4. Textual Analysis (Caption Analysis)
+3. Textual Analysis (Caption Analysis)
 - Sentiment analysis (optional)
 - Relationship between caption length and user interaction (likes, comments)
 
