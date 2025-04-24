@@ -33,8 +33,11 @@ env/
 
 # Data
 data/
-*.json
-*.csv
+analysis_results/
 
 # Logs
-*.log 
+*.log
+
+# OS
+.DS_Store
+Thumbs.db 

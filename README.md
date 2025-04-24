@@ -1,65 +1,143 @@
-# Instagram Data Scraper
+# Instagram User Behavior Analysis
 
-A Python-based Instagram data scraper for public profiles. This tool allows you to collect data from public Instagram profiles for data science projects.
+## Project Overview
 
-## Features
+This project aims to analyze Instagram user behaviors, focusing specifically on content posting patterns, hashtag usage, and user interactions. The analysis is performed using a comprehensive EDA (Exploratory Data Analysis) tool that provides detailed insights into engagement patterns, content performance, and audience interaction.
 
-- Scrape public Instagram profiles
-- Collect profile information (username, full name, biography, followers count, etc.)
-- Collect post data (captions, likes, comments, timestamps, etc.)
-- Save data in both JSON and CSV formats
-- Progress bar for tracking scraping progress
-- Error handling for private profiles and non-existent accounts
+## Research Questions
 
-## Installation
+The primary objectives of this analysis include:
 
-1. Clone this repository
-2. Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
+* Which types of posts (photos, videos, reels, or stories) receive the most user engagement?
+* Which hashtags are most effective in driving user engagement?
+* How does the timing of posts influence the level of engagement?
+* Is there a significant correlation between follower count and engagement levels?
+* Does caption length affect likes and comments received?
+
+## Data Collection Sources
+
+Data is collected through web scraping using Python (Selenium, BeautifulSoup) and stored in CSV format. The EDA tool processes this data to generate comprehensive insights.
+
+## Dataset Description
+
+The dataset includes the following variables:
+
+| Attribute      | Description                                  | Type            |
+| -------------- | -------------------------------------------- | --------------- |
+| Post ID        | Unique identifier for each post              | Numeric         |
+| User ID        | Unique user identifier                       | Numeric         |
+| Username       | Instagram username                           | String          |
+| Followers      | Number of followers of the user              | Numeric         |
+| Following      | Number of accounts the user is following     | Numeric         |
+| Post Type      | Type of the post (photo, video, reel, story) | Categorical     |
+| Post Timestamp | Date and time when the post was published    | Timestamp       |
+| Likes          | Number of likes the post received            | Numeric         |
+| Comments       | Number of comments on the post               | Numeric         |
+| Caption        | Text description of the post                 | String          |
+| Hashtags       | List of hashtags used in the post            | List of strings |
+
+## Analysis Components
+
+The EDA tool performs the following analyses:
+
+1. **Exploratory Data Analysis (EDA)**
+   * Data distribution analysis
+   * Missing value identification
+   * Outlier detection
+   * Visualizations (histograms, box plots, scatter plots)
+
+2. **User Engagement Analysis**
+   * Comparison of engagement by content type
+   * Time series analysis for peak engagement times
+   * Engagement rate calculations
+   * Content type performance metrics
+
+3. **Textual Analysis (Caption Analysis)**
+   * Sentiment analysis using TextBlob
+   * Relationship between caption length and user interaction
+   * Word count analysis
+   * Hashtag effectiveness
 
 ## Usage
 
-1. Open `instagram_scraper.py` and modify the `username` and `max_posts` variables in the `main()` function:
-```python
-username = "nasa"  # Change this to any public profile
-max_posts = 10    # Set to None to scrape all posts
+1. **Installation**
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+2. **Data Preparation**
+   - Place your Instagram data files in the `data` directory
+   - Data files should follow the naming convention: `username_YYYYMMDD_HHMMSS.csv`
+
+3. **Running the Analysis**
+   ```bash
+   python instagram_eda.py
+   ```
+
+## Output Structure
+
+The analysis generates the following outputs:
+
+```
+analysis_results/
+├── comparison/
+│   ├── account_comparison.csv
+│   ├── comparison_summary.txt
+│   └── metrics_comparison.png
+├── account1/
+│   ├── engagement_analysis.txt
+│   ├── hashtag_analysis.txt
+│   ├── missing_values_analysis.txt
+│   ├── numerical_summary.txt
+│   ├── temporal_analysis.txt
+│   ├── textual_analysis_summary.txt
+│   └── visualizations/
+│       ├── caption_length_distribution.png
+│       ├── engagement_by_type.png
+│       ├── hourly_engagement_pattern.png
+│       └── ...
+└── account2/
+    └── ... (same structure as account1)
 ```
 
-2. Run the script:
-```bash
-python instagram_scraper.py
-```
+## Expected Results and Visualizations
 
-3. The scraped data will be saved in the `data` directory in both JSON and CSV formats.
+The analysis produces:
 
-## Data Structure
+* Lists and visual representations of most effective hashtags
+* Charts illustrating engagement levels by content type
+* Heatmaps depicting optimal posting times
+* Regression and scatter plots showing relationships between various metrics
+* Sentiment analysis of captions
+* Time-based engagement patterns
 
-### JSON Output
-The JSON file contains two main sections:
-- `profile`: Contains profile information
-- `posts`: Contains an array of post data
+## Applications of Results
 
-### CSV Output
-The CSV file contains all post data with profile information added as columns.
+* Enhanced social media marketing strategies
+* Content optimization for brands and influencers
+* Improved user interaction predictions
+* Data-driven posting schedule optimization
+* Hashtag strategy refinement
 
-## Important Notes
+## Requirements
 
-- This scraper only works with public profiles
-- Be mindful of Instagram's rate limits and terms of service
-- The scraper does not download media files (images/videos)
-- Consider adding delays between requests if scraping multiple profiles
+- Python 3.6+
+- Required packages:
+  ```
+  pandas
+  matplotlib
+  seaborn
+  textblob
+  ```
 
-## Example Usage
+## Contributing
 
-```python
-from instagram_scraper import InstagramScraper
+Feel free to submit issues and enhancement requests!
 
-scraper = InstagramScraper()
-data = scraper.scrape_profile("nasa", max_posts=5)
+## License
 
-if data:
-    scraper.save_to_json(data, "nasa")
-    scraper.save_to_csv(data, "nasa")
-``` 
+This project is licensed under the MIT License - see the LICENSE file for details. 
