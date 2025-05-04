@@ -31,10 +31,6 @@ env/
 *.swp
 *.swo
 
-# Data
-data/
-analysis_results/
-
 # Logs
 *.log
 

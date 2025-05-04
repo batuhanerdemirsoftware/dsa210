@@ -1,0 +1,8 @@
+Engagement Analysis by Content Type - elasonggur
+--------------------------------------------------
+
+             likes                   comments                 engagement_rate             
+              mean   median      std     mean median      std            mean median   std
+post_type                                                                                 
+image      16732.0  16371.5  9720.84   110.62  111.0    58.40            6.26   6.13  3.63
+video       8424.0   7148.5  4589.33   974.75  544.0  1143.32            3.49   3.31  1.66

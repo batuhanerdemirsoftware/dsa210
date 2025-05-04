@@ -1,0 +1,18 @@
+Engagement Analysis for elasonggur:
+----------------------------------
+
+Engagement Rate Summary:
+count    12.000000
+mean      5.338587
+std       3.317935
+min       1.619642
+25%       2.888368
+50%       4.851121
+75%       6.602821
+max      12.967919
+
+Engagement Rate by Post Type:
+           count      mean       std       min       25%       50%       75%        max
+post_type                                                                              
+image        8.0  6.260966  3.633581  1.619642  3.708598  6.127096  8.010111  12.967919
+video        4.0  3.493829  1.658962  1.697706  2.634475  3.307870  4.167224   5.661871

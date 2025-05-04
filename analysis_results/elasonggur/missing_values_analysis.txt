@@ -1,0 +1,16 @@
+Missing Values Analysis for elasonggur:
+--------------------------------------
+post_id: 0 missing values (0.00%)
+user_id: 0 missing values (0.00%)
+username: 0 missing values (0.00%)
+followers: 0 missing values (0.00%)
+following: 0 missing values (0.00%)
+post_type: 0 missing values (0.00%)
+post_timestamp: 0 missing values (0.00%)
+likes: 0 missing values (0.00%)
+comments: 0 missing values (0.00%)
+caption: 0 missing values (0.00%)
+hashtags: 9 missing values (75.00%)
+post_date: 0 missing values (0.00%)
+post_hour: 0 missing values (0.00%)
+post_day_of_week: 0 missing values (0.00%)

@@ -1,0 +1,21 @@
+Temporal Analysis for elasonggur:
+---------------------------------
+
+Posts by Day of Week:
+post_day_of_week
+Friday      3
+Saturday    2
+Tuesday     2
+Monday      2
+Thursday    2
+Sunday      1
+
+Posts by Hour:
+post_hour
+18    3
+16    2
+15    2
+17    2
+14    1
+13    1
+11    1

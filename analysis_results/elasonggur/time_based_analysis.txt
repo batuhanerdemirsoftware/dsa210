@@ -1,0 +1,27 @@
+Time-Based Engagement Analysis - elasonggur
+----------------------------------------
+
+Hourly Engagement Summary:
+   post_hour         likes     comments  engagement_rate
+0         11   7048.000000   879.000000         2.946731
+1         13   4377.000000   190.000000         1.697706
+2         14   7249.000000  2621.000000         3.669009
+3         15  19142.500000   199.500000         7.190067
+4         16  10230.000000    75.000000         3.830713
+5         17  22755.000000   122.000000         8.504145
+6         18  14874.333333   100.333333         5.566584
+
+Weekly Engagement Summary:
+                         likes  comments  engagement_rate
+post_day_of_week                                         
+Monday            19511.000000     110.0         7.293781
+Tuesday           15256.000000    1405.5         6.193636
+Wednesday                  NaN       NaN              NaN
+Thursday          15784.500000     106.5         5.907215
+Friday            13263.666667     367.0         5.066974
+Saturday           5818.000000     115.0         2.205494
+Sunday            15022.000000     209.0         5.661871
+
+Peak Engagement Times:
+Best Hour: 17:00 (8.50% engagement)
+Best Day: Monday (7.29% engagement)

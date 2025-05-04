@@ -1,0 +1,16 @@
+Hashtag Analysis for elasonggur:
+--------------------------------
+
+Hashtag Count Summary:
+count    12.000000
+mean      0.250000
+std       0.452267
+min       0.000000
+25%       0.000000
+50%       0.000000
+75%       0.250000
+max       1.000000
+
+Top Hashtags:
+reklam    2
+ootd      1

@@ -1,0 +1,56 @@
+Textual Analysis Summary - elasonggur
+-----------------------------------
+
+Caption Length Statistics:
+count    12.000000
+mean     24.000000
+std      22.315914
+min       1.000000
+25%      11.750000
+50%      21.500000
+75%      28.250000
+max      84.000000
+
+Word Count Statistics:
+count    12.000000
+mean      3.166667
+std       3.242707
+min       0.000000
+25%       1.500000
+50%       3.000000
+75%       4.000000
+max      12.000000
+
+Sentiment Analysis Statistics:
+count    12.0
+mean      0.0
+std       0.0
+min       0.0
+25%       0.0
+50%       0.0
+75%       0.0
+max       0.0
+
+Correlation Analysis:
+                caption_length  word_count  sentiment     likes  comments
+caption_length        1.000000    0.991201        NaN -0.471724  0.832600
+word_count            0.991201    1.000000        NaN -0.416407  0.852670
+sentiment                  NaN         NaN        NaN       NaN       NaN
+likes                -0.471724   -0.416407        NaN  1.000000 -0.260871
+comments              0.832600    0.852670        NaN -0.260871  1.000000
+
+Top 5 Most Engaging Captions (by likes):
+                 caption  likes  comments  sentiment
+6  büyüleyici bi sehir🥹🤍  34707       178        0.0
+5                     ❤️  23263       190        0.0
+4                      🤎  20766       147        0.0
+9                      🖤  16598       114        0.0
+3        milan elosu🙂‍↔️  16145       108        0.0
+
+Top 5 Most Commented Captions:
+                                                                                 caption  likes  comments  sentiment
+1   ozel gun elbiseleri part 1🤍 favoriniz hangisii? “reel link”e sabitlicem hepsinii🙂‍↔️   7249      2621        0.0
+10                                                         kombini sevdik mi?🥹🤍\n#reklam   7048       879        0.0
+7                                                                  gunun kombini🤍\n#ootd  15022       209        0.0
+5                                                                                     ❤️  23263       190        0.0
+8                                                         birlikte hazirlandik🤍\n#reklam   4377       190        0.0
