@@ -448,58 +448,6 @@ class InstagramEDA:
             top_commented = df.nlargest(5, 'comments')[['caption', 'likes', 'comments', 'sentiment']]
             f.write(top_commented.to_string())
 
-    def compare_accounts(self, usernames):
-        """Compare metrics between accounts"""
-        comparison_dir = os.path.join(self.output_dir, 'comparison')
-        os.makedirs(comparison_dir, exist_ok=True)
-        
-        comparison_data = []
-        for username in usernames:
-            df = self.dfs[username]
-            avg_likes = df['likes'].mean()
-            avg_comments = df['comments'].mean()
-            followers = df['followers'].iloc[0]
-            following = df['following'].iloc[0]
-            engagement_rate = ((df['likes'] + df['comments']) / df['followers'] * 100).mean()
-            
-            comparison_data.append({
-                'username': username,
-                'avg_likes': avg_likes,
-                'avg_comments': avg_comments,
-                'followers': followers,
-                'following': following,
-                'engagement_rate': engagement_rate
-            })
-        
-        comparison_df = pd.DataFrame(comparison_data)
-        
-        # Save comparison data to CSV
-        comparison_df.to_csv(os.path.join(comparison_dir, 'account_comparison.csv'), index=False)
-        
-        # Create comparative visualizations
-        metrics = ['avg_likes', 'avg_comments', 'followers', 'following', 'engagement_rate']
-        fig, axes = plt.subplots(len(metrics), 1, figsize=(12, 4*len(metrics)))
-        
-        for i, metric in enumerate(metrics):
-            sns.barplot(data=comparison_df, x='username', y=metric, ax=axes[i])
-            axes[i].set_title(f'Comparison of {metric.replace("_", " ").title()}')
-            axes[i].tick_params(axis='x', rotation=45)
-        
-        plt.tight_layout()
-        plt.savefig(os.path.join(comparison_dir, 'metrics_comparison.png'))
-        plt.close()
-        
-        # Save comparison summary to text file
-        with open(os.path.join(comparison_dir, 'comparison_summary.txt'), 'w') as f:
-            f.write("Account Comparison Summary:\n")
-            f.write("-" * 24 + "\n\n")
-            f.write(comparison_df.to_string(index=False))
-        
-        # Print to console as well
-        print("\nAccount Comparison:")
-        print("-" * 20)
-        print(comparison_df.to_string(index=False))
-    
     def run_full_analysis(self, usernames):
         """Run complete EDA analysis for multiple accounts"""
         for username in usernames:
@@ -513,13 +461,11 @@ class InstagramEDA:
             self.analyze_engagement_patterns(username)
             self.analyze_captions(username)
         
-        # Compare accounts
-        self.compare_accounts(usernames)
         print(f"\nEDA completed! Results are saved in the '{self.output_dir}' directory.")
 
 def main():
     eda = InstagramEDA()
-    usernames = ["elasonggur", "nasa"]
+    usernames = ['elasonggur']  # Only analyze the profile we have data for
     eda.run_full_analysis(usernames)
 
 if __name__ == "__main__":
