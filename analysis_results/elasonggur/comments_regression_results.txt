@@ -1,0 +1,2 @@
+LinearRegression: R2=-0.134, MAE=219.11
+RandomForestRegressor: R2=0.361, MAE=220.17

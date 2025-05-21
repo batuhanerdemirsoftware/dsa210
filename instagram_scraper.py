@@ -60,7 +60,7 @@ class InstagramScraper:
                 print(f"\nStarting to scrape {total_posts} posts from {username}...")
                 print("Waiting 5 seconds between posts to avoid rate limiting...")
                 
-                for post in tqdm(posts_iterator, total=total_posts, desc="Scraping posts"):
+                for post in tqdm(posts_iterator, total=total_posts, desc=f"Scraping posts for {username}"):
                     if max_posts and post_count >= max_posts:
                         break
                         
@@ -161,20 +161,22 @@ class InstagramScraper:
 def main():
     scraper = InstagramScraper()
     
-    # Example usage
-    username = "elasonggur"  # Changed to Ela Sönmez Gür's profile
-    max_posts = 20  # Set to 20 posts
+    # List of official/public accounts to scrape
+    usernames = [
+        "instagram", "natgeo", "nasa", "nike", "nba", "9gag", "google", "apple", "cristiano", "fcbarcelona", "realmadrid", "championsleague"
+    ]
+    max_posts = 100  # Set to 100 posts per account
     
-    print(f"Scraping data for {username}...")
-    data = scraper.scrape_profile(username, max_posts)
-    
-    if data:
-        # Save data in both JSON and CSV formats
-        scraper.save_to_json(data, username)
-        scraper.save_to_csv(data, username)
-        print("\nScraping completed successfully!")
-    else:
-        print("\nScraping failed!")
+    for username in usernames:
+        print(f"\nScraping data for {username}...")
+        data = scraper.scrape_profile(username, max_posts)
+        if data:
+            # Save data in both JSON and CSV formats
+            scraper.save_to_json(data, username)
+            scraper.save_to_csv(data, username)
+            print(f"\nScraping completed successfully for {username}!")
+        else:
+            print(f"\nScraping failed for {username}!")
 
 if __name__ == "__main__":
     main() 
